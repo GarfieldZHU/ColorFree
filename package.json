@@ -62,11 +62,11 @@
     "autoprefixer": "^7.2.5",
     "bluebird": "^3.3.4",
     "classnames": "^2.1.3",
-    "react": "^16.13.1",
-    "react-dock": "^0.2.3",
-    "react-dom": "^15.0.2",
-    "react-redux": "^4.3.0",
-    "redux": "^3.2.1",
-    "redux-thunk": "^2.0.1"
+    "react": "^v17.0.1",
+    "react-dock": "^0.3.0",
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.2",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
   }
 }
