@@ -5,11 +5,13 @@
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "dev": "webpack --config webpack.dev.js",
-    "watch": "webpack -w --config webpack.dev.js"
+    "watch": "webpack -w --config webpack.dev.js",
+    "lint": "eslint --ext=jsx,js,tsx,ts src",
+    "lint:fix": "npm run lint -- --fix"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/GarfieldZHU/Rayfraction"
+    "url": "https://github.com/GarfieldZHU/ColorFree"
   },
   "author": {
     "name": "Garfield Zhu (AlohaYo)",
@@ -18,9 +20,26 @@
   "license": "MIT",
   "devDependencies": {
     "@types/chrome": "^0.0.126",
+    "@types/ramda": "^0.27.6",
     "@types/react": "^16.9.56",
     "@types/react-dom": "^16.9.9",
+    "@typescript-eslint/eslint-plugin": "^3.0.1",
+    "@typescript-eslint/parser": "^3.0.1",
     "css-loader": "^5.0.1",
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-babel": "^4.1.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.0.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-node": "^4.2.2",
+  "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "eslint-plugin-typescript": "^0.14.0",
     "node-sass": "^5.0.0",
     "sass-loader": "^10.0.5",
     "style-loader": "^2.0.0",
@@ -31,6 +50,8 @@
     "webpack-merge": "^5.3.0"
   },
   "dependencies": {
+    "antd": "^4.8.0",
+    "ramda": "^0.27.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   }
