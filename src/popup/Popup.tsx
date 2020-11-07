@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
-import "./Popup.scss";
+import React, { useEffect } from 'react'
+import './Popup.scss'
 
-export default function Popup() {
+export default function Popup(): React.ReactElement {
   useEffect(() => {
     // Example of how to send a message to eventPage.ts.
-    chrome.runtime.sendMessage({ popupMounted: true });
-  }, []);
+    chrome.runtime.sendMessage({ popupMounted: true })
+  }, [])
 
-  return <div className="popupContainer">Hello, world!</div>;
+  return <div className='popupContainer'>Hello, world!</div>
 }
