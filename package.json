@@ -7,7 +7,14 @@
     "dev": "webpack --config webpack.dev.js",
     "watch": "webpack -w --config webpack.dev.js"
   },
-  "author": "AlohaYo <Garfield.bupt@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GarfieldZHU/Rayfraction"
+  },
+  "author": {
+    "name": "Garfield Zhu (AlohaYo)",
+    "email": "Garfield.bupt@gmail.com"
+  },
   "license": "MIT",
   "devDependencies": {
     "@types/chrome": "^0.0.126",
