@@ -35,7 +35,11 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js"]
+    extensions: [".ts", ".tsx", ".js"],
+    alias: {
+      '~': path.resolve(__dirname, 'src'),
+      '@popup': path.resolve(__dirname, 'src/popup')
+    }
   },
   plugins: [
     new CopyWebpackPlugin({
