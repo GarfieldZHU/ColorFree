@@ -5,11 +5,11 @@ import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
-import { ColorTab } from './containers/ColorTab'
-import { EffectTab } from './containers/EffectTab'
-import { MoreTab } from './containers/MoreTab'
-import { TabPanel } from './containers/TabPanel'
-import { withA11yProps } from '../utils/a11yHelpers'
+import { ColorTab } from '@popup/containers/ColorTab'
+import { EffectTab } from '@popup/containers/EffectTab'
+import { MoreTab } from '@popup/containers/MoreTab'
+import { TabPanel } from '@popup/containers/TabPanel'
+import { withA11yProps } from '~/utils/a11yHelpers'
 
 import './Popup.scss'
 
@@ -23,7 +23,7 @@ enum EnumTab {
 const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor: theme.palette.background.paper,
-    width: 500,
+    width: 480,
   },
 }))
 
@@ -47,27 +47,27 @@ export default function Popup(): React.ReactElement {
         indicatorColor="primary"
         textColor="primary"
         variant="fullWidth"
-        aria-label="full width tabs example"
+        aria-label="color-free menu"
       >
         <Tab label="Color" {...withA11yProps(0)} />
         <Tab label="Effect" {...withA11yProps(1)} />
         <Tab label="More" {...withA11yProps(2)} />
       </Tabs>
     </AppBar>
-      <SwipeableViews
-        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-        index={tab}
-        onChangeIndex={changeHandler}
-      >
-        <TabPanel value={tab} index={0} dir={theme.direction}>
-          <ColorTab />
-        </TabPanel>
-        <TabPanel value={tab} index={1} dir={theme.direction}>
-          <EffectTab />
-        </TabPanel>
-        <TabPanel value={tab} index={2} dir={theme.direction}>
-          <MoreTab />
-        </TabPanel>
-      </SwipeableViews>
+    <SwipeableViews
+      axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+      index={tab}
+      onChangeIndex={changeHandler}
+    >
+      <TabPanel value={tab} index={0} dir={theme.direction}>
+        <ColorTab />
+      </TabPanel>
+      <TabPanel value={tab} index={1} dir={theme.direction}>
+        <EffectTab />
+      </TabPanel>
+      <TabPanel value={tab} index={2} dir={theme.direction}>
+        <MoreTab />
+      </TabPanel>
+    </SwipeableViews>
   </div>
 }

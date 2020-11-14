@@ -1,0 +1,37 @@
+$primary-color: darkblue;
+$background-color: #BADA55;
+
+
+@mixin color-free-scroll {
+  /* Show scroll only when hover */
+  & {
+    overflow: hidden;
+  }
+  &:hover {
+    overflow: overlay;
+  }
+
+
+  /* Scrollbar width */
+  &::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+
+  /* Scrollbar track */
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: rgba(255,255,255,0);
+  }
+
+  /* Scroll handle */
+  &::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 5px;
+  }
+
+  /* Horvered scroll handle */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #787878;
+  }
+}

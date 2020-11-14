@@ -1,20 +1,33 @@
-$primary-color: darkblue;
-$background-color: #BADA55;
+@import './style.scss';
 
 // Chrome applies an 8px margin by default (gross).
 body {
     margin: 0px;
 }
 
+
+.html {
+    @include color-free-scroll;
+
+    /* Chrome externsion default parent popup container */
+    #popup {
+        @include color-free-scroll;
+    }
+}
+
+
 .popupContainer {
-    align-items: center;
+    @include color-free-scroll;
+
     background-color: $background-color;
     border: 1px solid $primary-color;
     color: $primary-color;
-    display: flex;
+
     font-size: 20px;
     height: 512px;
-    justify-content: center;
-    align-items: start;
-    width: 256px;
+    width: 450px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
