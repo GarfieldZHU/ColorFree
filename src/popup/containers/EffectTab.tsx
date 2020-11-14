@@ -1,8 +1,8 @@
 import * as React from 'react'
-
+import { Emoji } from '@popup/components/Emoji'
 
 export function EffectTab() {
   return <>
-    Comming...
+    <Emoji symbol='🚧' /> Comming...
   </>
 }
