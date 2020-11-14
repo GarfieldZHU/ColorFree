@@ -4,6 +4,6 @@ import { Emoji } from '@popup/components/Emoji'
 
 export function MoreTab() {
   return <>
-    <Emoji symbol='🚧' /> Comming...
+    <Emoji symbol='🚧'  label='building' /> Comming...
   </>
 }

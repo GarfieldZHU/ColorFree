@@ -3,6 +3,6 @@ import { Emoji } from '@popup/components/Emoji'
 
 export function EffectTab() {
   return <>
-    <Emoji symbol='🚧' /> Comming...
+    <Emoji symbol='🚧' label='building' /> Comming...
   </>
 }
