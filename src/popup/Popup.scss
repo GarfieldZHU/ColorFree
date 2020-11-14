@@ -9,11 +9,12 @@ body {
 .popupContainer {
     align-items: center;
     background-color: $background-color;
-    border: 2px solid $primary-color;
+    border: 1px solid $primary-color;
     color: $primary-color;
     display: flex;
     font-size: 20px;
     height: 512px;
     justify-content: center;
+    align-items: start;
     width: 256px;
 }
