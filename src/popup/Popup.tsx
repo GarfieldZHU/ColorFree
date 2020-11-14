@@ -5,6 +5,9 @@ import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
+import { ColorTab } from './containers/ColorTab'
+import { EffectTab } from './containers/EffectTab'
+import { MoreTab } from './containers/MoreTab'
 import { TabPanel } from './containers/TabPanel'
 import { withA11yProps } from '../utils/a11yHelpers'
 
@@ -57,13 +60,13 @@ export default function Popup(): React.ReactElement {
         onChangeIndex={changeHandler}
       >
         <TabPanel value={tab} index={0} dir={theme.direction}>
-          Contructing...
+          <ColorTab />
         </TabPanel>
         <TabPanel value={tab} index={1} dir={theme.direction}>
-          Coming...
+          <EffectTab />
         </TabPanel>
         <TabPanel value={tab} index={2} dir={theme.direction}>
-          Coming...
+          <MoreTab />
         </TabPanel>
       </SwipeableViews>
   </div>
