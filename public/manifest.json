@@ -14,7 +14,10 @@
     "scripts": ["js/eventPage.js"],
     "persistent": false
   },
-
+  "content_scripts": [{
+    "matches": [ "*://*/*" ],
+    "js": [ "js/content.js" ]
+  }],
   "icons": {
     "16": "icon16.png",
     "48": "icon48.png",
