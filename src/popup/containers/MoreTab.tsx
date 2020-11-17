@@ -5,6 +5,7 @@ import AccordionSummary from '@material-ui/core/AccordionSummary'
 import Typography from '@material-ui/core/Typography'
 import Switch from '@material-ui/core/Switch'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+import { makeStyles } from '@material-ui/core/styles'
 
 import { Emoji } from '@popup/components/Emoji'
 import {
@@ -12,8 +13,10 @@ import {
   initState,
   reducer
 } from '@popup/reducers/configReducer'
-import { accordionStyles as useStyles } from '@popup/styles/reactCss'
+import { accordionStyles } from '@popup/styles/reactCss'
 
+
+const useStyles = makeStyles(accordionStyles)
 
 export function MoreTab() {
   const classes = useStyles()
@@ -31,7 +34,7 @@ export function MoreTab() {
         aria-controls="general-content"
         id="general-header"
       >
-        <Typography className={classes.heading}>Enable all</Typography>
+        <Typography className={classes.heading}>Enable</Typography>
         <Typography className={classes.secondaryHeading}>
           <Switch
             classes={{
