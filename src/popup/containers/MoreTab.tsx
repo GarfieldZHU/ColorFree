@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
 import Accordion from '@material-ui/core/Accordion'
 import AccordionDetails from '@material-ui/core/AccordionDetails'
 import AccordionSummary from '@material-ui/core/AccordionSummary'
@@ -13,23 +12,8 @@ import {
   initState,
   reducer
 } from '@popup/reducers/configReducer'
+import { accordionStyles as useStyles } from '@popup/styles/reactCss'
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      width: '100%',
-    },
-    heading: {
-      fontSize: theme.typography.pxToRem(15),
-      flexBasis: '33.33%',
-      flexShrink: 0,
-    },
-    secondaryHeading: {
-      fontSize: theme.typography.pxToRem(15),
-      color: theme.palette.text.secondary,
-    },
-  }),
-);
 
 export function MoreTab() {
   const classes = useStyles()
@@ -44,13 +28,19 @@ export function MoreTab() {
   return <div className={classes.root}>
     <Accordion expanded={expanded === 'general'} >
       <AccordionSummary
-        expandIcon={<ExpandMoreIcon />}
         aria-controls="general-content"
         id="general-header"
       >
         <Typography className={classes.heading}>Enable all</Typography>
         <Typography className={classes.secondaryHeading}>
           <Switch
+            classes={{
+              root: classes.switchRoot,
+              switchBase: classes.switchBase,
+              thumb: classes.thumb,
+              track: classes.track,
+              checked: classes.checked,
+            }}
             checked={config.enabled}
             onChange={() => dispatch({ type: EnumConfigAction.OVERALL_SWITCH })}
             color="primary"
@@ -59,11 +49,6 @@ export function MoreTab() {
           />
         </Typography>
       </AccordionSummary>
-      {/* <AccordionDetails>
-        <Typography>
-          <Emoji symbol='🚧'  label='building' /> Comming...
-        </Typography>
-      </AccordionDetails> */}
     </Accordion>
     <Accordion expanded={expanded === 'color'} onChange={changeHandler('color')}>
       <AccordionSummary
