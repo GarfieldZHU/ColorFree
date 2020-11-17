@@ -73,7 +73,7 @@ const accordionStyles = (theme: Theme) => createStyles({
     height: 20,
   },
   track: {
-    borderRadius: 23 / 2,
+    borderRadius: 22 / 2,
     border: `1px solid ${theme.palette.grey[400]}`,
     backgroundColor: theme.palette.grey[50],
     opacity: 1,

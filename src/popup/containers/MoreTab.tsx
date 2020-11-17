@@ -25,7 +25,7 @@ export function MoreTab() {
   const [config, dispatch] = React.useReducer(reducer, initState)
 
   const changeHandler = (panel: string) => (_event: React.ChangeEvent<{}>, isExpanded: boolean) => {
-    setExpanded(isExpanded ? panel: false)
+    setExpanded(isExpanded ? panel : false)
   }
 
   return <div className={classes.root}>
