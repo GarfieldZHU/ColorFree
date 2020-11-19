@@ -9,7 +9,7 @@ interface Props {
  * A wrapper of emoji icon to be inline component.
  * @param props: emoji symbol is must. Araia label is optional
  */
-export function Emoji({ symbol = '🤣', label } : Props) {
+export const Emoji: React.FC<Props> = ({ symbol = '🤣', label } : Props) => {
   return <span
     className="emoji"
     role="img"

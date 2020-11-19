@@ -12,7 +12,7 @@ interface Props {
   children: Child | Child[];
 }
 
-export function TabPanel(props: Props) {
+export const TabPanel: React.FC<Props> = (props: Props) => {
   const { children, value, index, ...other } = props;
 
   return (

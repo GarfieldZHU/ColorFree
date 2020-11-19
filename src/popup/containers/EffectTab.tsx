@@ -12,7 +12,7 @@ import { effectLayoutStyles } from '../styles/reactCss'
 
 const useStyles = makeStyles(effectLayoutStyles)
 
-export function EffectTab() {
+export const EffectTab: React.FC<{}> = () =>  {
   const classes = useStyles()
 
   return <>

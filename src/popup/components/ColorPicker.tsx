@@ -9,7 +9,7 @@ interface Props {
   showPicker?: boolean;
 }
 
-export function ColorPicker({ selected = { r: 0, g: 255, b: 184, a: 1}, showPicker = false }: Props) {
+export const ColorPicker: React.FC<Props> = ({ selected = { r: 0, g: 255, b: 184, a: 1}, showPicker = false }: Props) => {
   const [state, setState] = React.useState({ selected, showPicker })
 
   const clickHandler = React.useCallback(() => {

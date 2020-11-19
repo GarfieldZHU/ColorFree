@@ -18,7 +18,7 @@ import { accordionStyles } from '@popup/styles/reactCss'
 
 const useStyles = makeStyles(accordionStyles)
 
-export function MoreTab() {
+export const MoreTab: React.FC<{}> = () => {
   const classes = useStyles()
   const [expanded, setExpanded] = React.useState<string | false>(false)
 

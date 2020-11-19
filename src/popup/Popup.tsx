@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-export default function Popup(): React.ReactElement {
+export const Popup: React.FC<{}> = () => {
   const [tab, setTab] = React.useState(EnumTab.Color)
   const classes = useStyles()
   const theme = useTheme()
