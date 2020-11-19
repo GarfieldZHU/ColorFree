@@ -83,8 +83,18 @@ const accordionStyles = (theme: Theme) => createStyles({
   focusVisible: {},
 })
 
+const effectLayoutStyles = (theme: Theme) =>
+  createStyles({
+    root: {
+      width: '100%',
+      maxWidth: 360,
+      backgroundColor: theme.palette.background.paper,
+    },
+  })
+
 
 export {
+  effectLayoutStyles,
   accordionStyles,
   pickerStyles,
 }

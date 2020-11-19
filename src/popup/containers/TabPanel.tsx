@@ -3,7 +3,7 @@ import * as React from 'react'
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
 
-type Child = React.ReactElement | string;
+type Child = React.ReactElement | string
 
 interface Props {
   index: number;
