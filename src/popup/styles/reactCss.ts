@@ -86,15 +86,30 @@ const accordionStyles = (theme: Theme) => createStyles({
 const effectLayoutStyles = (theme: Theme) =>
   createStyles({
     root: {
-      width: '100%',
+      width: 300 + theme.spacing(3) * 2,
       maxWidth: 360,
       backgroundColor: theme.palette.background.paper,
     },
+    text: {
+      paddingRight: '50px',
+    }
   })
+
+
+const sliderStyles = (theme: Theme) =>
+createStyles({
+  root: {
+    width: 300 + theme.spacing(3) * 2,
+  },
+  margin: {
+    height: theme.spacing(3),
+  },
+})
 
 
 export {
   effectLayoutStyles,
   accordionStyles,
   pickerStyles,
+  sliderStyles,
 }
