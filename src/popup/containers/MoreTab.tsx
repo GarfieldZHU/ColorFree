@@ -12,10 +12,9 @@ import { makeStyles } from '@material-ui/core/styles'
 import { Emoji } from '@popup/components/Emoji'
 import {
   EnumConfigAction,
-  initState,
-  reducer
 } from '@popup/reducers/configReducer'
 import { accordionStyles } from '@popup/styles/reactCss'
+import { ConfigContext } from '@popup/reducers/contexts'
 
 
 const useStyles = makeStyles(accordionStyles)
@@ -24,7 +23,7 @@ export const MoreTab: React.FC<{}> = () => {
   const classes = useStyles()
   const [expanded, setExpanded] = React.useState<string | false>(false)
 
-  const [config, dispatch] = React.useReducer(reducer, initState)
+  const [config, dispatch] = React.useContext(ConfigContext)
 
   const changeHandler = (panel: string) => (_event: React.ChangeEvent<{}>, isExpanded: boolean) => {
     setExpanded(isExpanded ? panel : false)

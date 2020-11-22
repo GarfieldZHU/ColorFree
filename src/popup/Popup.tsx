@@ -12,6 +12,8 @@ import { TabPanel } from '@popup/containers/TabPanel'
 import { withA11yProps } from '~/utils/a11yHelpers'
 
 import './Popup.scss'
+import { ConfigContext } from '@popup/reducers/contexts'
+import { initState, reducer } from '@popup/reducers/configReducer'
 
 enum EnumTab {
   Color = 0,
@@ -39,35 +41,37 @@ export const Popup: React.FC<{}> = () => {
 
   const changeHandler = React.useCallback((_event: any, newValue: number) => setTab(newValue), [])
 
-  return <div className={`popupContainer ${classes.root}`}>
-    <AppBar position="static" color="default">
-      <Tabs
-        value={tab}
-        onChange={changeHandler}
-        indicatorColor="primary"
-        textColor="primary"
-        variant="fullWidth"
-        aria-label="color-free menu"
+  return <ConfigContext.Provider value={React.useReducer(reducer, initState)}>
+  <div className={`popupContainer ${classes.root}`}>
+      <AppBar position="static" color="default">
+        <Tabs
+          value={tab}
+          onChange={changeHandler}
+          indicatorColor="primary"
+          textColor="primary"
+          variant="fullWidth"
+          aria-label="color-free menu"
+        >
+          <Tab label="Color" {...withA11yProps(0)} />
+          <Tab label="Effect" {...withA11yProps(1)} />
+          <Tab label="More" {...withA11yProps(2)} />
+        </Tabs>
+      </AppBar>
+      <SwipeableViews
+        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+        index={tab}
+        onChangeIndex={changeHandler}
       >
-        <Tab label="Color" {...withA11yProps(0)} />
-        <Tab label="Effect" {...withA11yProps(1)} />
-        <Tab label="More" {...withA11yProps(2)} />
-      </Tabs>
-    </AppBar>
-    <SwipeableViews
-      axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-      index={tab}
-      onChangeIndex={changeHandler}
-    >
-      <TabPanel value={tab} index={0} dir={theme.direction}>
-        <ColorTab />
-      </TabPanel>
-      <TabPanel value={tab} index={1} dir={theme.direction}>
-        <EffectTab />
-      </TabPanel>
-      <TabPanel value={tab} index={2} dir={theme.direction}>
-        <MoreTab />
-      </TabPanel>
-    </SwipeableViews>
-  </div>
+        <TabPanel value={tab} index={0} dir={theme.direction}>
+          <ColorTab />
+        </TabPanel>
+        <TabPanel value={tab} index={1} dir={theme.direction}>
+          <EffectTab />
+        </TabPanel>
+        <TabPanel value={tab} index={2} dir={theme.direction}>
+          <MoreTab />
+        </TabPanel>
+      </SwipeableViews>
+    </div>
+  </ConfigContext.Provider>
 }

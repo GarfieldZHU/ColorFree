@@ -11,19 +11,27 @@ import {
 } from '@material-ui/core'
 
 import { Emoji } from '@popup/components/Emoji'
-import { effectLayoutStyles } from '../styles/reactCss'
-import { BlurSlider } from '../components/BlurSlider'
+import { effectLayoutStyles } from '@popup/styles/reactCss'
+import { BlurSlider } from '@popup/components/BlurSlider'
+import { ConfigContext } from '@popup/reducers/contexts'
+import { EnumConfigAction } from '@popup/reducers/configReducer'
+
 
 const useStyles = makeStyles(effectLayoutStyles)
 
 export const EffectTab: React.FC<{}> = () =>  {
   const classes = useStyles()
+  const [config, dispatch] = React.useContext(ConfigContext)
+  const changeHandler = React.useCallback((_e, value) => dispatch({
+    type: EnumConfigAction.SET_BLUR,
+    payload: { blur: value },
+  }), [])
 
   return <>
     <List subheader={<ListSubheader>Settings</ListSubheader>} className={classes.root}>
       <ListItem>
         <Typography gutterBottom className={classes.text}>Blur: </Typography>
-        <BlurSlider value={50} />
+        <BlurSlider value={config?.params?.blur ?? 0} onChange={changeHandler} />
       </ListItem>
       <ListItem>
         <ListItemIcon>
